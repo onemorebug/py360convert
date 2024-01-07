@@ -26,7 +26,7 @@ def evaluate_rmse(panorama, original):
 
 
 if __name__ == '__main__':
-    panorama = cv2.imread("evaluation/cubemaps/cubemap.png")
-    original = cv2.imread("evaluation/cubemaps/cubemap-glued.png")
+    panorama = cv2.imread("evaluation/remove-anything/3.png")
+    original = cv2.imread("evaluation/remove-anything/4.png")
     evaluate_ssim(panorama, original)
     evaluate_rmse(panorama, original)
