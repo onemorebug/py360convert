@@ -6,3 +6,4 @@ python cubemap_glue_floor.py -o img/cubemap-glued.png -c img/cubemap.png -f img/
 python convert360 --convert c2e --i img/cubemap-glued.png --o img/equi-whitetop.png --w 6080 --h 3040 --mode bilinear
 python glue_images.py --top img/original.png --bottom img/equi-whitetop.png -o img/final.png
 pause
+

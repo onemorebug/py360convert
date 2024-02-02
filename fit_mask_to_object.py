@@ -6,8 +6,20 @@ def fit_mask(image_path, template_path, mask_path, mask):
     image = cv2.imread(image_path)
     points, centers = TM.InvariantTM_rgbdiff(image_path, template_path, mask_path)
 
+    print(points)
+    print(centers)
+
+    for center in centers:
+        print("Center X: ", center[0][0])
+        print("Center Y: ", center[0][1])
+
+
+
+
     translation_x = centers[0][0][0]
+    print("Center X: ", translation_x)
     translation_y = centers[0][0][1]
+    print("Center Y: ", translation_y)
     rotation_angle = points[0][1]
     scale_factor = (points[0][2] / 100)
 
@@ -96,7 +108,7 @@ if __name__ == '__main__':
     # img = cv2.imread('img/trimmedfloor.png')
     mask = cv2.imread('masks/mask_tripod.png', cv2.IMREAD_GRAYSCALE)
     # template = cv2.imread('masks/', cv2.IMREAD_GRAYSCALE)
-    image_path = 'img/floor_trimmed_rot.png'
+    image_path = 'img/unterguende/black_low_floor.png'
     template_path = 'img/template_bg.jpg'
     mask_path = 'masks/mask_tripod.png'
     fit_mask(image_path, template_path, mask_path, mask)

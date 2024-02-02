@@ -210,7 +210,10 @@ def invariant_template_matching(img_path, template_path):
     center_y = None
     rotation = None
     scale_fact = None
+    cnt = 0
     for point_info in points_list:
+        if(cnt > 0):
+            break
         point = point_info[0]
         print("Point:", point)
         angle = point_info[1]
@@ -232,16 +235,21 @@ def invariant_template_matching(img_path, template_path):
         if scale_fact is None:
             scale_fact = scale
         print()
+        cnt += 1
     #plt.grid(True)
     plt.show()
     fig2, ax2 = plt.subplots(1)
     # plt.gcf().canvas.set_window_title('Template Matching Results')
     ax2.imshow(img_rgb)
-    for point_info in centers_list:
-        point = point_info[0]
-        scale = point_info[1]
-        plt.scatter(point[0]+width/2*scale/100, point[1]+height/2*scale/100, s=20, color="red")
-    plt.show()
+    # breakCount = 0
+    # for point_info in centers_list:
+    #     if(breakCount != 0):
+    #         break
+    #     point = point_info[0]
+    #     scale = point_info[1]
+    #     plt.scatter(point[0]+width/2*scale/100, point[1]+height/2*scale/100, s=20, color="red")
+    #     breakCount += 1
+    # plt.show()
     return points_list, centers_list
 
 

@@ -1,7 +1,4 @@
-import sys
-
 import cv2
-import numpy as np
 import argparse
 
 def glue_images(input_path_top, input_path_bottom, output_path, glue_height):

@@ -6,7 +6,6 @@ from PIL import Image
 
 import py360convert
 
-
 # Parsing command line arguments
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter,
                                  description='Convertion between cubemap and equirectangular or equirectangular to perspective.')

@@ -1,7 +1,4 @@
-import sys
-
 import cv2
-import numpy as np
 import argparse
 
 
@@ -16,10 +13,10 @@ def slice_image(input_path, output_path, height):
 
     cv2.imwrite(output_path, image)
 
-def execute_module(args):
+if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Paint white rectangle over image.")
-    parser.add_argument("-oo", "--output", help="Output filename", default="output_image.png")
-    parser.add_argument("-ii", "--input", help="Input filename", default="input_image.png")
+    parser.add_argument("-o", "--output", help="Output filename", default="output_image.png")
+    parser.add_argument("-i", "--input", help="Input filename", default="input_image.png")
     parser.add_argument("-height", "--height", help="Height of white rectangle from top", default=2600)
 
     args = parser.parse_args()
