@@ -1,6 +1,4 @@
-import cut_equi_top
 # import convert360
-import cubemap_trim_floor
 # import cubemap_glue_floor
 # import glue_images
 
